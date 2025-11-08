@@ -15,16 +15,28 @@ The Lights Out game is a puzzle where pressing a light toggles its state and the
 
 ## Installation
 
-Clone the repository and ensure Python 3.x is installed.
+Clone the repository and install dependencies:
 
 ```bash
 git clone https://github.com/felicabrera/lightsout
 cd lightsout
+pip install -r requirements.txt
 ```
 
-No additional dependencies required.
-
 ## Usage
+
+### Web App (Interactive) ⭐ Recommended
+
+Run the Streamlit web application for the best interactive experience:
+
+```bash
+streamlit run app.py
+```
+
+This launches a beautiful web interface where you can:
+- Select board size (3×3, 4×4, 5×5)
+- Click lights to set your puzzle visually
+- Solve and see the solution with clear visual feedback
 
 ### As a Module
 
@@ -54,27 +66,40 @@ else:
 python tests/test_lights_out.py
 ```
 
-### Interactive Play
+### Demo
 
-Run the main script for an interactive experience:
+Try the interactive web app:
+
+```bash
+streamlit run app.py
+```
+
+Or the console version:
 
 ```bash
 python main.py
 ```
-
-You'll be prompted to enter the board size and the initial configuration. The solver will show you which positions to press and verify the solution.
 
 ## Project Structure
 
 ```
 lightsout/
 ├── src/
+│   ├── __init__.py
 │   └── lights_out.py      # Main solver module
 ├── tests/
 │   └── test_lights_out.py # Unit tests
 ├── docs/
-├── main.py
-└── README.md
+│   ├── mathematical_background.md
+│   ├── api_reference.md
+│   └── project_structure.md
+├── app.py                 # Streamlit web app
+├── main.py                # Console interface
+├── requirements.txt       # Dependencies
+├── LICENSE
+├── .gitignore
+├── README.md
+└── Development Summary Report_ Lights Out Game in Pyt.md
 ```
 
 ## Algorithm

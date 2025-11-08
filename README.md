@@ -40,8 +40,7 @@ This launches a beautiful web interface where you can:
 
 ### As a Module
 
-```
-python
+```python
 from src.lights_out import resolver_lights_out, simulate_press
 
 board = [
@@ -58,7 +57,6 @@ if solution:
 else:
     print("No solution")
 ```
-
 
 ### Running Tests
 
@@ -93,6 +91,7 @@ lightsout/
 │   ├── mathematical_background.md
 │   ├── api_reference.md
 │   └── project_structure.md
+├── index.html             # Static web version (GitHub Pages)
 ├── app.py                 # Streamlit web app
 ├── main.py                # Console interface
 ├── requirements.txt       # Dependencies
@@ -100,6 +99,21 @@ lightsout/
 ├── .gitignore
 ├── README.md
 └── Development Summary Report_ Lights Out Game in Pyt.md
+```
+
+### Local Development
+
+**Static version:**
+
+```bash
+# Just open index.html in your browser
+```
+
+**Interactive version:**
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
 ```
 
 ## Algorithm

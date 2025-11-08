@@ -180,18 +180,17 @@ function handleLightClick(event) {
 function handleLightTouch(event) {
     if (gameWon) return;
 
-    const light = event.currentTarget;
-
     // Prevent default to avoid double-firing with click
     event.preventDefault();
 
+    const light = event.currentTarget;
     const row = parseInt(light.getAttribute('data-row'));
     const col = parseInt(light.getAttribute('data-col'));
 
     board = toggleLight(board, row, col);
     moves++;
 
-    // Update only the affected lights instead of re-rendering everything
+    // Force immediate visual update
     updateAffectedLights(row, col);
     gameWon = checkWinCondition(board);
     updateStatus();
@@ -255,7 +254,7 @@ function renderBoard() {
 
             // Add both mouse and touch events for better mobile support
             light.addEventListener('click', handleLightClick);
-            light.addEventListener('touchstart', handleLightTouch, { passive: true });
+            light.addEventListener('touchstart', handleLightTouch, { passive: false });
 
             gameBoardElement.appendChild(light);
         }

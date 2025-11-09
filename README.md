@@ -56,31 +56,6 @@ python -m pytest tests/ -v
 - Open `test-js.html` in browser and click "Run JavaScript Tests"
 - Or in browser console after loading `index.html`: `window.runJSTests()`
 
-## Project Structure
-
-```text
-lightsout/
-├── src/
-│   ├── __init__.py
-│   └── lights_out.py      # Main solver module (Python)
-├── js/
-│   ├── game-logic.js      # Core game mechanics (JavaScript)
-│   ├── solver.js          # Mathematical solver (JavaScript port)
-│   ├── tests.js           # JavaScript unit tests
-│   └── ui.js              # User interface and rendering
-├── tests/
-│   └── test_lights_out.py # Unit tests
-├── docs/
-│   ├── mathematical_foundation.md    # Mathematical analysis
-│   └── implementation_architecture.md # Implementation details
-├── index.html             # Main web application
-├── test-js.html          # JavaScript test runner
-├── LICENSE
-├── .gitignore
-├── README.md
-└── Development Summary Report_ Lights Out Game in Pyt.md
-```
-
 ## Mathematical Background
 
 The solver models the puzzle as a system of linear equations over Z₂ and uses Gaussian elimination to find the solution vector indicating which lights to press.
